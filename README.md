@@ -2,7 +2,7 @@
 
 # Project Name
 
-> Awesome books
+> To-do list
 
 
 ## Built With
@@ -58,7 +58,7 @@ A mighty, modern linter that helps you avoid errors and enforce conventions in y
 - LinkedIn: [LinkedIn](https://linkedin.com/in/pius-ssekweyama-23665794)
 
 ## 🤝 Contributing
-1. Kinyanjuigeorge827@gmail.com
+
 
 Contributions, issues, and feature requests are welcome!
 Feel free to check the [issues page](../../issues/).
