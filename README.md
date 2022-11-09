@@ -35,6 +35,9 @@ First let's create a directory, initialize npm, install webpack locally, and ins
 ### Loading Data
 1. npm install --save-dev csv-loader xml-loader
 
+### HtmlWebpackPlugin
+1. npm install --save-dev html-webpack-plugin
+
 ## Authors
 1. Ssekweyama Pius
 
