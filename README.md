@@ -38,6 +38,10 @@ First let's create a directory, initialize npm, install webpack locally, and ins
 ### HtmlWebpackPlugin
 1. npm install --save-dev html-webpack-plugin
 
+### Using webpack-dev-server
+1. npm install --save-dev webpack-dev-server 
+2. npm install --save-dev express webpack-dev-middleware
+
 ## Authors
 1. Ssekweyama Pius
 
