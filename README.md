@@ -23,7 +23,7 @@
 
 To get a local copy up and running follow these simple example steps.
 
-## Prerequisites
+## Getting Started
 ### WebPack
 First let's create a directory, initialize npm, install webpack locally, and install the webpack-cli
 1. npm init -y
