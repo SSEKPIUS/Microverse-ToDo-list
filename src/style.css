@@ -64,15 +64,15 @@ section {
 }
 
 .refresh::after {
-  content: "4";
+  content: attr(data-after);
   background-color: yellow;
   color: red;
   font-weight: bold;
   padding: 5px;
   border-radius: 5px;
   position: relative;
-  top: -20px;
-  right: 5px;
+  top: -65px;
+  right: -24px;
 }
 
 .list-add {
