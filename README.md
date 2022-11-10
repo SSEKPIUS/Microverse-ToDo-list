@@ -11,11 +11,6 @@
 - Frameworks-none
 - Technologies use- Git, npm
 
-## Live Demo (if available)
-
-[Live Demo Link]()
-
-
 ## About
 
 "To-do list" is a tool that helps to organize your day. It simply lists the things that you need to do and allows you to mark them as complete. I will build a simple website that allows for doing that, and I will do it using ES6 and Webpack!
@@ -23,13 +18,26 @@
 
 To get a local copy up and running follow these simple example steps.
 
+## Getting Started
 ### WebPack
 First let's create a directory, initialize npm, install webpack locally, and install the webpack-cli
 1. npm init -y
 2. npm install webpack webpack-cli --save-dev
 
-### Prerequisites
-Set-up GitHub Actions
+### Loading CSS
+1. npm install --save-dev style-loader css-loader
+
+### Loading Data
+1. npm install --save-dev csv-loader xml-loader
+
+### HtmlWebpackPlugin
+1. npm install --save-dev html-webpack-plugin
+
+### Using webpack-dev-server
+1. npm install --save-dev webpack-dev-server 
+2. npm install --save-dev express webpack-dev-middleware
+
+### Set-up GitHub Actions
 1. create a .github/workflows folder and add a copy of .github/workflows/linters.yml (https://github.com/microverseinc/linters-config/blob/master/html-css/.github/workflows/linters.yml) to that folder.
 
 ### Setup & Install
@@ -47,13 +55,12 @@ A mighty, modern linter that helps you avoid errors and enforce conventions in y
 #### ESLint
 1. Run npm install --save-dev eslint@7.x eslint-config-airbnb-base@14.x eslint-plugin-import@2.x babel-eslint@10.x
 2. Copy .eslintrc.json(https://github.com/microverseinc/linters-config/blob/master/html-css-js/.eslintrc.json) to the root directory of your project.
-3. Run npx eslint . on the root of your directory of your project to Fix linter errors.
 
 ### Run tests
 
-1. Run npx hint .  to Fix Web validation errors.
-2. Run npx stylelint "**/*.{css,scss}" on the root of your directory of your project to Fix linter errors.
-
+1. Run npx hint . to Fix Web validation errors.
+2. Run npx eslint . --fix on the root of your directory of your project to Fix linter errors.
+3. Run npx stylelint "**/*.{css,scss}" . --fix  on the root of your directory of your project to Fix linter errors.
 
 ## Authors
 1. Ssekweyama Pius
