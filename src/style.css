@@ -27,6 +27,13 @@ section {
   display: none;
 }
 
+.shadow {
+  display: none;
+  width: 100%;
+  height: 0.2em;
+  background: #80808038;
+}
+
 .selected-list {
   box-sizing: border-box;
   border-radius: 3px;
