@@ -4,6 +4,7 @@ import readStorage from './readStorage.js';
 import deleteTask from './deleteTask.js';
 import updateTask from './updateTask.js';
 import ClearComplete from './clearAllCompleted.js';
+import reorder from './reorder.js';
 
 let toDo = [];
 
@@ -19,6 +20,15 @@ function createMove() {
       <circle id="Oval-3" data-name="Oval" cx="1" cy="1" r="1" transform="translate(17 11)" stroke="#000" stroke-miterlimit="10" stroke-width="0.5"/>
     </g>
   </svg>`;
+  span.addEventListener('mouseenter', (e) => {
+    const parentTag = e.target.closest('li');
+    parentTag.setAttribute('draggable', 'true');
+    parentTag.focus();
+  });
+  span.addEventListener('mouseleave', (e) => {
+    const parentTag = e.target.closest('li');
+    parentTag.setAttribute('draggable', 'false');
+  });
   return span;
 }
 
@@ -108,11 +118,35 @@ function addChildrenToArticle(el, article) {
 }
 
 function createListItem(el) {
+  const div = document.createElement('div');
+  div.classList.add('shadow');
   const li = document.createElement('li');
   li.classList.add('todo', el.completed ? 'completed' : null);
   let article = document.createElement('article');
   article = addChildrenToArticle(el, article);
+  li.appendChild(div);
   li.appendChild(article);
+  li.setAttribute('draggable', 'false');
+  li.addEventListener('dragstart', (e) => {
+    e.dataTransfer.setData('index', e.target.querySelector('.index').innerText);
+  });
+  li.addEventListener('dragover', (e) => {
+    e.preventDefault();
+    e.target.closest('ul').querySelectorAll('.shadow').forEach((el) => {
+      el.style.display = 'none';
+    });
+    e.target.closest('li').querySelector('.shadow').style.display = 'block';
+  });
+  li.addEventListener('drop', (e) => {
+    e.preventDefault();
+    const dropedIndex = e.dataTransfer.getData('index');
+    const currentIndex = e.target.closest('li').querySelector('.index').innerText;
+    reorder(currentIndex, dropedIndex);
+    e.target.closest('ul').querySelectorAll('.shadow').forEach((el) => {
+      el.style.display = 'none';
+    });
+    loadList();
+  });
   return li;
 }
 
