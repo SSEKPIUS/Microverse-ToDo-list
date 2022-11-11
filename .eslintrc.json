@@ -17,6 +17,8 @@
       "eol-last": "off",
       "no-console": "warn",
       "no-unused-vars": "warn",
+      "no-use-before-define": "warn",
+      "eqeqeq": "warn",
       "import/extensions": [ 1, {
         "js": "always", "json": "always"
       }]

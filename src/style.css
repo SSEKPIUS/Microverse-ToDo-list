@@ -23,6 +23,10 @@ section {
   perspective: 1000;
 }
 
+.index {
+  display: none;
+}
+
 .selected-list {
   box-sizing: border-box;
   border-radius: 3px;
@@ -140,7 +144,7 @@ input[type=text] {
 .todo article {
   display: flex;
   align-items: center;
-  background-color: #fff;
+  background-color: transparent;
   padding: 0 0;
   font-size: 1rem;
   border-bottom: 1px solid rgba(0, 0, 0, 0.08);
@@ -217,9 +221,8 @@ input[type=text] {
   display: none;
   opacity: 0.5;
   width: 1.4rem;
-  height: 50px;
-  padding: 0 0.25rem;
   margin-left: auto;
+  margin-right: 5px;
   cursor: pointer;
   overflow: hidden;
   -webkit-transition: all 200ms ease-in-out;

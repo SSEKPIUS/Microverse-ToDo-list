@@ -1,6 +1,7 @@
 import './style.css';
 import addTODO from './addTasks.js';
 import readStorage from './readStorage.js';
+import deleteTask from './deleteTask.js';
 
 let toDo = [];
 
@@ -30,14 +31,29 @@ function createDestroy() {
         c-2.52,0-2.98,0.55-2.98,3.01L11.5,7.5h-8c-1.48,0-2,0.49-2,2v1c0,1.55,0.52,2,2,2h1v26c0,2.49,0.55,3,3,3h24c2.5,0,4-0.471,4-3v-26
         h1c1.51,0,2-0.48,2-2v-1c0-1.48-0.43-2-2-2h-9V4.5z M24.5,4.5v3h-10v-3H24.5z M9.5,12.5h21v24h-21V12.5z"/>
   </svg>`;
+  span.querySelector('svg').addEventListener('click', (e) => {
+    e.stopImmediatePropagation();
+    deleteTask(e.target.parentNode.parentNode.parentNode.querySelector('.index').innerText);
+    loadList();
+  });
   return span;
 }
 
 function createView(el) {
+  const index = document.createElement('span');
+  index.classList.add('index');
+  index.innerText = el.index;
+
   const label = document.createElement('label');
   label.classList.add('label');
   label.tabIndex = '0';
   label.innerText = el.description;
+  label.addEventListener('click', (e) => {
+    document.querySelectorAll('.todo').forEach((el) => {
+      el.classList.remove('editing');
+    });
+    e.target.parentNode.parentNode.parentNode.classList.add('editing');
+  });
 
   const textarea = document.createElement('textarea');
   textarea.classList.add('edit', 'chromeless-input');
@@ -46,6 +62,7 @@ function createView(el) {
 
   const div = document.createElement('div');
   div.classList.add('view');
+  div.appendChild(index);
   div.appendChild(label);
   div.appendChild(textarea);
   return div;
