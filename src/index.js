@@ -3,6 +3,7 @@ import addTODO from './addTasks.js';
 import readStorage from './readStorage.js';
 import deleteTask from './deleteTask.js';
 import updateTask from './updateTask.js';
+import ClearComplete from './clearAllCompleted.js';
 
 let toDo = [];
 
@@ -64,7 +65,7 @@ function createView(el) {
     if (e.code === 'Enter' && e.target.value) {
       const parent = e.target.parentNode.parentNode.parentNode;
       e.stopImmediatePropagation();
-      updateTask(parent.querySelector('.index').innerText, e.target.value);
+      updateTask(parent.querySelector('.index').innerText, e.target.value, 'description');
       parent.querySelector('.label').innerText = e.target.value;
       parent.classList.remove('editing');
       e.preventDefault();
@@ -79,16 +80,27 @@ function createView(el) {
   return div;
 }
 
-function createInputCheckbox() {
+function createInputCheckbox(el) {
   const input = document.createElement('input');
   input.classList.add('toggle');
   input.type = 'checkbox';
   input.tabIndex = '0';
+  input.checked = el.completed;
+  input.addEventListener('change', (e) => {
+    const parent = e.target.parentNode.parentNode;
+    parent.classList.remove('editing');
+    if (e.target.checked) {
+      parent.classList.add('completed');
+    } else {
+      parent.classList.remove('completed');
+    }
+    updateTask(parent.querySelector('.index').innerText, e.target.checked, 'completed');
+  });
   return input;
 }
 
 function addChildrenToArticle(el, article) {
-  article.appendChild(createInputCheckbox());
+  article.appendChild(createInputCheckbox(el));
   article.appendChild(createView(el));
   article.appendChild(createDestroy());
   article.appendChild(createMove());
@@ -97,7 +109,7 @@ function addChildrenToArticle(el, article) {
 
 function createListItem(el) {
   const li = document.createElement('li');
-  li.classList.add('todo');
+  li.classList.add('todo', el.completed ? 'completed' : null);
   let article = document.createElement('article');
   article = addChildrenToArticle(el, article);
   li.appendChild(article);
@@ -133,6 +145,10 @@ function components() {
     }
   });
   document.querySelector('.refresh').addEventListener('click', () => {
+    loadList();
+  });
+  document.querySelector('.link-button.clear-completed').addEventListener('click', () => {
+    ClearComplete();
     loadList();
   });
 }
