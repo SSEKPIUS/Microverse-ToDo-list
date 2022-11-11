@@ -13,14 +13,18 @@ main {
 
 section {
   width: 60%;
+  max-height: 80%;
   padding: 20px 5%;
-  overflow: hidden;
   -webkit-transition: padding 300ms ease-in-out, max-height 500ms ease-in-out;
   transition: padding 300ms ease-in-out, max-height 500ms ease-in-out;
   -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
   -webkit-perspective: 1000;
   perspective: 1000;
+}
+
+.index {
+  display: none;
 }
 
 .selected-list {
@@ -61,18 +65,20 @@ section {
   opacity: 0.5;
   color: #000;
   margin-right: 10px;
+  cursor: pointer;
 }
 
 .refresh::after {
-  content: "4";
-  background-color: yellow;
-  color: red;
+  content: attr(data-after);
+  background-color: red;
+  color: white;
   font-weight: bold;
   padding: 5px;
-  border-radius: 5px;
+  border-radius: 50%;
   position: relative;
-  top: -20px;
-  right: 5px;
+  top: -65px;
+  right: -24px;
+  font-size: 0.5em;
 }
 
 .list-add {
@@ -140,7 +146,7 @@ input[type=text] {
 .todo article {
   display: flex;
   align-items: center;
-  background-color: #fff;
+  background-color: transparent;
   padding: 0 0;
   font-size: 1rem;
   border-bottom: 1px solid rgba(0, 0, 0, 0.08);
@@ -217,9 +223,8 @@ input[type=text] {
   display: none;
   opacity: 0.5;
   width: 1.4rem;
-  height: 50px;
-  padding: 0 0.25rem;
   margin-left: auto;
+  margin-right: 5px;
   cursor: pointer;
   overflow: hidden;
   -webkit-transition: all 200ms ease-in-out;
