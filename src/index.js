@@ -2,6 +2,7 @@ import './style.css';
 import addTODO from './addTasks.js';
 import readStorage from './readStorage.js';
 import deleteTask from './deleteTask.js';
+import updateTask from './updateTask.js';
 
 let toDo = [];
 
@@ -59,6 +60,16 @@ function createView(el) {
   textarea.classList.add('edit', 'chromeless-input');
   textarea.maxLength = '255';
   textarea.innerText = el.description;
+  textarea.addEventListener('keypress', (e) => {
+    if (e.code === 'Enter' && e.target.value) {
+      const parent = e.target.parentNode.parentNode.parentNode;
+      e.stopImmediatePropagation();
+      updateTask(parent.querySelector('.index').innerText, e.target.value);
+      parent.querySelector('.label').innerText = e.target.value;
+      parent.classList.remove('editing');
+      e.preventDefault();
+    }
+  });
 
   const div = document.createElement('div');
   div.classList.add('view');
@@ -120,6 +131,9 @@ function components() {
       e.target.value = '';
       loadList();
     }
+  });
+  document.querySelector('.refresh').addEventListener('click', () => {
+    loadList();
   });
 }
 window.addEventListener('DOMContentLoaded', () => {

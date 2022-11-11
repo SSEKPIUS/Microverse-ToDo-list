@@ -13,8 +13,8 @@ main {
 
 section {
   width: 60%;
+  max-height: 80%;
   padding: 20px 5%;
-  overflow: hidden;
   -webkit-transition: padding 300ms ease-in-out, max-height 500ms ease-in-out;
   transition: padding 300ms ease-in-out, max-height 500ms ease-in-out;
   -webkit-transform: translate3d(0, 0, 0);
@@ -65,6 +65,7 @@ section {
   opacity: 0.5;
   color: #000;
   margin-right: 10px;
+  cursor: pointer;
 }
 
 .refresh::after {

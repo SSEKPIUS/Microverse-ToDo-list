@@ -3,7 +3,7 @@ import saveStorage from './saveStorage.js';
 
 const deleteTask = (val) => {
   const store = readStorage().filter(function (el) {
-    return el.index != this.val;
+    return el.index.toString() !== this.val;
   }, { val }).reduce((accumulator, currentValue, currentIndex) => {
     accumulator.push({
       index: currentIndex + 1,
