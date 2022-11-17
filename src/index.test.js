@@ -1,10 +1,10 @@
 import addTasks from './addTasks.js';
-
-const { localStorage, window } = require('./dom.js');
+import clearStorage from './clearStorage.js';
 
 describe('unit tests for the To Do list application', () => {
   beforeEach(() => {
-    localStorage.clear();
+    clearStorage();
+    jest.resetAllMocks();
   });
   afterEach(() => {
     console.log(localStorage.getAll());

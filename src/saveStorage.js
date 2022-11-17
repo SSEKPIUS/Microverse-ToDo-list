@@ -1,7 +1,3 @@
-const saveStorage = (arr) => {
-  const jsonStr = JSON.stringify(arr);
-  localStorage.setItem('todo', jsonStr);
-  return true;
-};
+const saveStorage = (arr) => localStorage.setItem('todo', JSON.stringify(arr));
 
 export default saveStorage;
