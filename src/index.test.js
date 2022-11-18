@@ -27,26 +27,8 @@ describe('unit tests for the To Do list application', () => {
     saveStorage.mockImplementation(arr=>{
       return localStorage.setItem('todo', JSON.stringify(arr));
     });
-    addTasks("xxxxxx");
+    addTasks("todoList 01");
     loadList(window, readStorage);
-
-    
-    //addTasks("yyyyyy");
-
-    // const mockJson = {
-    //   index: Object.keys(localStorage.getAll()).length + 1,
-    //   completed: false,
-    //   description: "TodoList one",
-    // };
-    // localStorage.setItem('todo', JSON.stringify(mockJson));
-    // localStorage.setItem('todo', JSON.stringify(mockJson));
-
-    
-
-
-
-    console.log('getAll Store:',localStorage.getAll());
-    // addTasks();
-    //expect(clearStorage(10)).toBe(10);
+    expect(window.document.body.querySelectorAll('li').length).toBe(1);
   });
 });
