@@ -13,7 +13,7 @@
 
 ## About
 
-In this project we will write unit tests for the To Do list application. The testing project has been divided into two parts. In part 1 we will test functions responsible for adding and deleting list items. In part 2 we will test the status and content updates as well as the order re-position of items in the list.
+In this part of the testing project, we will test functions responsible for the status and content updates. we will also test the order re-position of items in the list upon drag/drop actions.
 
 ## Live Demo
 [Live Demo](https://ssekpius.github.io/Microverse-ToDo-list/dist/)
