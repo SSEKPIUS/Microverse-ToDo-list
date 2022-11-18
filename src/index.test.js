@@ -14,7 +14,6 @@ beforeEach(() => {
   localStorage.clear();
 });
 
-
 describe('unit tests for the To Do list application', () => {
   test('test if add functions add  exactly one <li> element to the list in the DOM.', () => {    
     readStorage.mockImplementation(()=>{
@@ -41,9 +40,6 @@ describe('unit tests for the To Do list application', () => {
     addTasks("todoList 04");
     deleteTask('1');
     loadList(window, readStorage);
-    // $('li')[0].querySelector('.destroy').click();
-    //$("ul li:first-child article .destroy svg").click();
-    // loadList(window, readStorage);
     expect(window.document.body.querySelectorAll('li').length).toBe(3);
   });
 });
