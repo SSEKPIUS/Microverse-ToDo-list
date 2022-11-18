@@ -2,18 +2,18 @@
 
 # Project Name
 
-> Microverse-ToDo-list
+> Testing To Do list: part 1
 
 
 ## Built With
 
-- CSS, HTML
-- Frameworks-none
+- CSS, HTML, ES6
+- Webpack
 - Technologies use- Git, npm
 
 ## About
 
-"To-do list" is a tool that helps to organize your day. It simply lists the things that you need to do and allows you to mark them as complete. I will build a simple website that allows for doing that, and I will do it using ES6 and Webpack!
+In this project we will write unit tests for the To Do list application. The testing project has been divided into two parts. In part 1 we will test functions responsible for adding and deleting list items. In part 2 we will test the status and content updates as well as the order re-position of items in the list.
 
 ## Live Demo
 [Live Demo](https://ssekpius.github.io/Microverse-ToDo-list/dist/)
@@ -64,6 +64,7 @@ A mighty, modern linter that helps you avoid errors and enforce conventions in y
 1. Run npx hint . to Fix Web validation errors.
 2. Run npx eslint . --fix on the root of your directory of your project to Fix linter errors.
 3. Run npx stylelint "**/*.{css,scss}" . --fix  on the root of your directory of your project to Fix linter errors.
+4. Run npm test.    to run tests.
 
 ## Authors
 1. Ssekweyama Pius
@@ -73,7 +74,7 @@ A mighty, modern linter that helps you avoid errors and enforce conventions in y
 - LinkedIn: [LinkedIn](https://linkedin.com/in/pius-ssekweyama-23665794)
 
 ## 🤝 Contributing
-
+1. Bright Kportiklah
 
 Contributions, issues, and feature requests are welcome!
 Feel free to check the [issues page](../../issues/).

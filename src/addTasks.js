@@ -7,8 +7,8 @@ const addTasks = (val) => {
     index: Object.keys(store).length + 1,
     completed: false,
     description: val,
-  });
-  saveStorage(store);
+  })
+  return saveStorage(store);
 };
 
 export default addTasks;

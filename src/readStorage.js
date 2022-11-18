@@ -1,8 +1,3 @@
-const readStorage = () => {
-  if (localStorage.hasOwnProperty('todo')) {
-    return JSON.parse(localStorage.getItem('todo'));
-  }
-  return [];
-};
+const readStorage = () => (localStorage.hasOwnProperty('todo') ? JSON.parse(localStorage.getItem('todo')) : []);
 
 export default readStorage;
