@@ -61,14 +61,7 @@ describe('Testing To Do list - part 2', () => {
     updateTask('1', "todoList 27", 'description');
     loadList(window, readStorage);
     expect(window.document.body.querySelector('ul li .label').innerText).toMatch(/^todoList 27$/);
-  });
-
-
-
-
-
-
-  
+  });  
 
   test('updating an items "completed" status', ()=>{
     readStorage.mockImplementation(()=>{
@@ -85,15 +78,6 @@ describe('Testing To Do list - part 2', () => {
     loadList(window, readStorage);
     expect(window.document.body.querySelector('ul li .toggle').checked).toBeTruthy();
   });
-  
-
-
-
-
-
-
-
-
 
   test('the "Clear all completed" function', ()=>{
     readStorage.mockImplementation(()=>{
