@@ -46,7 +46,8 @@
     "xml-loader": "^1.2.1"
   },
   "dependencies": {
-    "lodash": "^4.17.21",
-    "jsdom": "^20.0.2"
+    "jquery": "^3.6.1",
+    "jsdom": "^20.0.2",
+    "lodash": "^4.17.21"
   }
 }

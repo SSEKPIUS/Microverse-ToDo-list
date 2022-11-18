@@ -3,6 +3,7 @@ import addTasks from './addTasks.js';
 import clearStorage from './clearStorage.js';
 import readStorage from './readStorage.js';
 import saveStorage from './saveStorage.js';
+import { loadList } from './__mocks__/index.js';
 const { localStorage, window } = require('./dom.js');
 
 jest.mock('./clearStorage.js', () => jest.fn());
@@ -26,10 +27,11 @@ describe('unit tests for the To Do list application', () => {
     saveStorage.mockImplementation(arr=>{
       return localStorage.setItem('todo', JSON.stringify(arr));
     });
-
-
     addTasks("xxxxxx");
-    addTasks("yyyyyy");
+    loadList(window, readStorage);
+
+    
+    //addTasks("yyyyyy");
 
     // const mockJson = {
     //   index: Object.keys(localStorage.getAll()).length + 1,
