@@ -1,3 +1,5 @@
+import deleteTask from '../deleteTask.js';
+
 let toDo = [];
 
 function createMove(document) {
@@ -38,8 +40,11 @@ function createDestroy(document) {
     span.querySelector('svg').addEventListener('click', (e) => {
       e.stopImmediatePropagation();
       deleteTask(e.target.parentNode.parentNode.parentNode.querySelector('.index').innerText);
+      console.log("########### ive beem clicked!");
       loadList();
     });
+
+    span.querySelector('svg').click;
     return span;
   }
 
@@ -150,6 +155,7 @@ function loadList(window, readStorage) {
     toDo.forEach((el) => {
         ul.appendChild(createListItem(el, document));
     });
+    return ul;
 }
 
 export { loadList };
