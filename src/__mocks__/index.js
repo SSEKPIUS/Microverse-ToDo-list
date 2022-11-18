@@ -40,7 +40,6 @@ function createDestroy(document) {
     span.querySelector('svg').addEventListener('click', (e) => {
       e.stopImmediatePropagation();
       deleteTask(e.target.parentNode.parentNode.parentNode.querySelector('.index').innerText);
-      console.log("########### ive beem clicked!");
       loadList();
     });
 
