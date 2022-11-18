@@ -41,13 +41,9 @@ describe('unit tests for the To Do list application', () => {
     addTasks("todoList 04");
     deleteTask('1');
     loadList(window, readStorage);
-    // console.log('JQuery', $('li'));
     // $('li')[0].querySelector('.destroy').click();
-    //console.log('list item:', $("ul li:first-child article .destroy svg").html());
     //$("ul li:first-child article .destroy svg").click();
     // loadList(window, readStorage);
-    // console.log(localStorage.getAll());
-    // console.log('JQuery', $('li'));
     expect(window.document.body.querySelectorAll('li').length).toBe(3);
   });
 });
