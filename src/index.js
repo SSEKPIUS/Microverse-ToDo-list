@@ -1,5 +1,5 @@
 import './style.css';
-import addTODO from './addTasks.js';
+import addTasks from './addTasks.js';
 import readStorage from './readStorage.js';
 import deleteTask from './deleteTask.js';
 import updateTask from './updateTask.js';
@@ -166,14 +166,14 @@ function components() {
     e.preventDefault();
     const node = e.target.querySelector('#new-item');
     if (node.value) {
-      addTODO(node.value);
+      addTasks(node.value);
       node.value = '';
       loadList();
     }
   });
   document.getElementById('new-item').addEventListener('keypress', (e) => {
     if (e.code === 'Enter' && e.target.value) {
-      addTODO(e.target.value);
+      addTasks(e.target.value);
       e.target.value = '';
       loadList();
     }

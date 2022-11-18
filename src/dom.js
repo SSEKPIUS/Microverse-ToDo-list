@@ -27,6 +27,10 @@ const localStorageMock = (
       getAll() {
         return store;
       },
+
+      hasOwnProperty(key) {
+        return store.hasOwnProperty(key);
+      },
     };
   }()
 );
