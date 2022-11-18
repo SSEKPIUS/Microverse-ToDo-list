@@ -79,6 +79,26 @@ describe('Testing To Do list - part 2', () => {
     expect(window.document.body.querySelector('ul li .toggle').checked).toBeTruthy();
   });
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
   test('the "Clear all completed" function', ()=>{
     readStorage.mockImplementation(()=>{
       return localStorage.hasOwnProperty('todo') ? JSON.parse(localStorage.getItem('todo')) : [];
